@@ -104,12 +104,12 @@ For solving the model, I used `CasadiSolver` with `atol=1e-2` and `rtol=1e-2`. T
 
 Once the simulation was complete, I extracted data for:
 
-* Capacity
-* Plated lithium
-* SEI-related lithium loss
-* Mechanical stress
-* Temperature
-* LAM (computed as % decrease in active material volume fraction)
+* Cell voltage, current, capacity over time
+* SEI thickness and lithium loss
+* Plated lithium capacity (partially reversible)
+* Active material volume fraction changes (LAM)
+* Surface tangential stress in particles
+* Lumped cell temperature
 
 ---
 
@@ -119,17 +119,7 @@ To quantify degradation, I analyzed each cycle’s discharge capacity, plated li
 
 ---
 
-### 5. Machine Learning-Based Capacity Fade Prediction
-
-I wanted to explore how well a simple model could predict capacity fade, so I trained a **Random Forest regressor**.
-
-To reduce overfitting, I used only every 8th cycle (1, 9, 17, …). The inputs were **Plated Lithium** and **LAM**, and the output was **Capacity Fade \[%]**.
-
-After training the model, I evaluated its predictions against the true capacity fade. The R² score and RMSE confirmed decent predictive performance, and the true vs. predicted plot showed strong agreement.
-
----
-
-### 6. Visualization and Final Stats
+### 5. Visualization and Final Stats
 
 The script generated several plots:
 
@@ -147,26 +137,14 @@ Finally, I printed summary statistics including:
 
 ---
 
-### 7. How the Model is Solved Internally
+### 6. How the Model is Solved Internally
 
 PyBaMM handles spatial discretization using finite volume methods. It creates an expression tree that links variables across space and time, and then translates the whole system into a set of algebraic equations. `CasadiSolver` solves these using an implicit method suited for stiff problems, with adaptive time-stepping.
 
 ---
 
-### 8. Relevance for Modeling Jobs
-
-This work touches on several skills relevant to battery modeling roles:
-
-* Coupled PDE/ODE modeling
-* Electrochemical degradation physics
-* Parametric tuning and stress modeling
-* Cycle-based capacity analysis
-* Integration of machine learning (Random Forests)
-* Clean, modular Python scripting using PyBaMM
-* Git version control (VS Code integrated)
-
-
-### Results
+## Results
 The detailed results are given in [here](Results.md)
+
 
 
