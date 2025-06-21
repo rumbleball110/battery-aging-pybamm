@@ -40,35 +40,7 @@ The total capacity fade after 100 fast-charging cycles is about **0.33%**, which
 
 ---
 
-### **2.2 SEI Growth (Final Thickness: 14.88 nm)**
-
-#### **Mechanism**:
-
-The SEI growth is governed by the **solvent-diffusion-limited model**, which inherently slows down as the layer thickens. This aligns with classic square-root behavior often observed in both simulations and experiments.
-
-#### **Impact**:
-
-* **Irreversible lithium loss** due to the formation of passivation species like Li₂CO₃ and LiF.
-* **Increased interfacial resistance** — though the total impedance increase appears modest here due to the non-porosity-coupled SEI.
-
-![SEI thickness vs. time](./sei.png)
-
----
-
-### **2.3 SEI Growth Rate Per Cycle**
-
-To further understand the dynamics, I plotted the SEI thickness increment per cycle:
-
-* Initial growth per cycle is **\~0.68 nm**, but this value rapidly declines.
-* By cycle 100, the growth rate falls below **0.08 nm/cycle**, indicating effective self-passivation.
-
-This confirms that the majority of SEI formation occurs in the early cycles, and the system enters a steady-state behavior.
-
-![SEI growth rate per cycle](./sei_growth.png)
-
----
-
-### **2.4 Lithium Plating (Final: 0.000540 A·h)**
+### **2.2 Lithium Plating (Final: 0.000540 A·h)**
 
 #### **Cause**:
 
@@ -83,7 +55,7 @@ This confirms that the majority of SEI formation occurs in the early cycles, and
 
 ---
 
-### **2.5 Loss of Active Material (LAM: 0.006313%)**
+### **2.3 Loss of Active Material (LAM: 0.006313%)**
 
 #### **Mechanism**:
 
@@ -94,6 +66,35 @@ This confirms that the majority of SEI formation occurs in the early cycles, and
 
 * **Max surface stress is \~7.33 MPa**, below typical fracture thresholds (\~10–100 MPa for graphite).
 * Particle design parameters from OKane2022 (e.g., small particle size, stiffness) favor mechanical resilience.
+
+---
+
+
+### **2.4 SEI Growth (Final Thickness: 14.88 nm)**
+
+#### **Mechanism**:
+
+The SEI growth is governed by the **solvent-diffusion-limited model**, which inherently slows down as the layer thickens. This aligns with classic square-root behavior often observed in both simulations and experiments.
+
+#### **Impact**:
+
+* **Irreversible lithium loss** due to the formation of passivation species like Li₂CO₃ and LiF.
+* **Increased interfacial resistance** — though the total impedance increase appears modest here due to the non-porosity-coupled SEI.
+
+![SEI thickness vs. time](./sei.png)
+
+---
+
+### **2.5 SEI Growth Rate Per Cycle**
+
+To further understand the dynamics, I plotted the SEI thickness increment per cycle:
+
+* Initial growth per cycle is **\~0.68 nm**, but this value rapidly declines.
+* By cycle 100, the growth rate falls below **0.08 nm/cycle**, indicating effective self-passivation.
+
+This confirms that the majority of SEI formation occurs in the early cycles, and the system enters a steady-state behavior.
+
+![SEI growth rate per cycle](./sei_growth.png)
 
 ---
 
